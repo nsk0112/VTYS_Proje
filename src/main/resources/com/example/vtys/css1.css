@@ -1,0 +1,110 @@
+#ap{
+    -fx-background-color: #453c67;
+
+}
+
+.label{
+    -fx-font-size: 20px;
+    -fx-font-family: "Inter Semi Bold";
+    -fx-text-fill: #ECECEC;
+}
+
+.text-field{
+    -fx-border-color: #ececec;
+}
+
+.button{
+    -fx-background-color: #46C2CB;
+    -fx-font-family: "Inter Semi Bold";
+    -fx-text-fill: #ECECEC;
+    -fx-font-size: 20px;
+    -fx-border-width: 2px;
+    -fx-border-color: #ececec;
+}
+
+.button:hover{
+    -fx-cursor: hand;
+}
+
+#welcome{
+    -fx-font-size: 40px;
+}
+
+/*{*/
+/*    -fx-pref-width: 70px;*/
+/*    -fx-pref-height: 10px;*/
+/*    -fx-font-size: 15px;*/
+/*    -fx-background-color: #6d67e4;*/
+/*}*/
+
+#refbtn, #back_btn{
+    -fx-pref-width: 85px;
+    -fx-pref-height: 20px;
+    -fx-font-size: 17px;
+    -fx-background-color: #6d67e4;
+}
+
+#pageLabel{
+    -fx-font-size: 40px;
+}
+
+
+.table-view .column-header .label{
+    -fx-text-fill: #fff;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-size: 19px;
+}
+
+.table-view .cell{
+    -fx-cell-size: 38;
+    -fx-alignment: center-left;
+    -fx-background-color: #fbfaf5;
+    -fx-border-color: #808080FF;
+    -fx-text-fill: #000;
+    -fx-font-size: 15px;
+}
+
+.table-view .increment-button ,.table-view .decrement-button {
+    -fx-background-color:transparent;
+    -fx-background-radius: 2em;
+}
+
+.table-view .scroll-bar:horizontal .track,
+.table-view .scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color:derive( #46c2cb,20%);
+
+    -fx-background-radius: 2em;
+    -fx-border-radius:2em;
+}
+
+.table-view .scroll-bar:horizontal .thumb,
+.table-view .scroll-bar:vertical .thumb {
+    -fx-background-color:derive( #46c2cb,10%);
+    -fx-background-insets: 2, 0, 0;
+    -fx-background-radius: 2em;
+}
+
+.table-view .column-header,
+.table-view .column-header-background .filler {
+    -fx-background-color:  #46c2cb;
+}
+
+#tablebtn{
+    -fx-pref-width: 80px;
+    -fx-pref-height: 15px;
+    -fx-font-size: 16px;
+    -fx-background-color: #46c2cb;
+}
+
+#delLabel{
+    -fx-font-size: 17px;
+    -fx-text-fill: #DD5555;
+}
+
+#product-label{
+    -fx-text-fill: #FBFAF5FF;
+    -fx-font-size: 12px;
+}
+

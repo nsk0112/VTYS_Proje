@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ap" prefHeight="700.0" prefWidth="700.0" stylesheets="@css1.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vtys.MainPage">
+   <children>
+      <Label fx:id="welcome" layoutX="261.0" layoutY="34.0" prefHeight="58.0" prefWidth="177.0" text="Welcome">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <Button fx:id="animals" layoutX="296.0" layoutY="523.0" mnemonicParsing="false" onAction="#animalsB" prefHeight="48.0" prefWidth="108.0" text="Animals" />
+      <Button fx:id="products" layoutX="136.0" layoutY="523.0" mnemonicParsing="false" onAction="#productsB" text="Products" />
+      <Button fx:id="sales" layoutX="136.0" layoutY="585.0" mnemonicParsing="false" onAction="#salesB" prefHeight="48.0" prefWidth="108.0" text="Farmers" />
+      <Button fx:id="fields" layoutX="451.0" layoutY="523.0" mnemonicParsing="false" onAction="#fieldsB" prefHeight="48.0" prefWidth="108.0" text="Fields" />
+      <Button fx:id="tools" layoutX="451.0" layoutY="585.0" mnemonicParsing="false" onAction="#toolsB" prefHeight="48.0" prefWidth="108.0" text="Tools" />
+      <Button fx:id="vehicles" layoutX="296.0" layoutY="585.0" mnemonicParsing="false" onAction="#vehiclesB" prefHeight="48.0" prefWidth="108.0" text="Vehicles" />
+      <ImageView fitHeight="263.0" fitWidth="484.0" layoutX="108.0" layoutY="174.0">
+         <image>
+            <Image url="@imgbin_baby-jungle-animals-farm-livestock-png.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
