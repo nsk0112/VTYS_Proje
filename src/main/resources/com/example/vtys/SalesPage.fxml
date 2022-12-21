@@ -22,14 +22,14 @@
 
          </columns>
       </TableView>
-      <TextField fx:id="id" editable="false" layoutX="34.0" layoutY="591.0" prefHeight="28.0" prefWidth="87.0" promptText="ID" />
-      <TextField fx:id="fname" editable="false" layoutX="129.0" layoutY="591.0" prefHeight="28.0" prefWidth="87.0" promptText="First Name" />
+      <TextField fx:id="id" layoutX="34.0" layoutY="591.0" prefHeight="28.0" prefWidth="87.0" promptText="ID" />
+      <TextField fx:id="fname" layoutX="129.0" layoutY="591.0" prefHeight="28.0" prefWidth="87.0" promptText="First Name" />
       <Button id="refbtn" fx:id="refbtn" layoutX="508.0" layoutY="19.0" mnemonicParsing="false" onAction="#refreshPage" prefHeight="36.0" prefWidth="80.0" text="Refresh" />
-      <TextField fx:id="lname" editable="false" layoutX="223.0" layoutY="591.0" prefHeight="28.0" prefWidth="87.0" promptText="Last Name" />
-      <Button id="refbtn" fx:id="btnadd" layoutX="580.0" layoutY="584.0" mnemonicParsing="false" onAction="#addButton" prefHeight="42.0" prefWidth="126.0" style="-fx-font: 14;" stylesheets="@css1.css" text="UPDATE" />
+      <TextField fx:id="lname" layoutX="223.0" layoutY="591.0" prefHeight="28.0" prefWidth="87.0" promptText="Last Name" />
+      <Button id="refbtn" fx:id="btnadd" layoutX="580.0" layoutY="589.0" mnemonicParsing="false" onAction="#addButton" prefHeight="42.0" prefWidth="111.0" style="-fx-font-size: 14;" stylesheets="@css1.css" text="UPDATE" />
       <Label fx:id="delLabel" layoutX="144.0" layoutY="642.0" prefHeight="25.0" prefWidth="406.0" />
-      <TextField fx:id="ToolID" editable="false" layoutX="319.0" layoutY="591.0" prefHeight="28.0" prefWidth="75.0" promptText="Tool" />
-      <TextField fx:id="vehicleID" editable="false" layoutX="403.0" layoutY="591.0" prefHeight="28.0" prefWidth="63.0" promptText="Vehicle" />
-      <TextField fx:id="fieldID" editable="false" layoutX="476.0" layoutY="591.0" prefHeight="28.0" prefWidth="75.0" promptText="Field" />
+      <TextField fx:id="ToolID" layoutX="319.0" layoutY="591.0" prefHeight="28.0" prefWidth="75.0" promptText="Tool" />
+      <TextField fx:id="vehicleID" layoutX="403.0" layoutY="591.0" prefHeight="28.0" prefWidth="63.0" promptText="Vehicle" />
+      <TextField fx:id="fieldID" layoutX="476.0" layoutY="591.0" prefHeight="28.0" prefWidth="75.0" promptText="Field" />
    </children>
 </AnchorPane>

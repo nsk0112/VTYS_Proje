@@ -78,7 +78,9 @@ public class ToolsPage implements Initializable {
         ap.getScene().getWindow().hide();
 
         Stage stage = new Stage();
+        stage.getIcons().add(new Image("C:\\Users\\lenovo\\IdeaProjects\\vtys\\src\\main\\java\\com\\example\\vtys\\paw.png"));
         Parent root = (Parent) FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("MainPage.fxml")));
+        stage.setTitle("FarmNN!");
         Scene scene = new Scene(root);
         stage.setScene(scene);
 

@@ -189,6 +189,8 @@ public class VehiclesPage implements Initializable {
 
         Stage stage = new Stage();
         Parent root = (Parent) FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("MainPage.fxml")));
+        stage.getIcons().add(new Image("C:\\Users\\lenovo\\IdeaProjects\\vtys\\src\\main\\java\\com\\example\\vtys\\paw.png"));
+        stage.setTitle("FarmNN!");
         Scene scene = new Scene(root);
         stage.setScene(scene);
 

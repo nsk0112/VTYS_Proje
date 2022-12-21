@@ -12,6 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -79,6 +80,8 @@ public class SalesPage implements Initializable {
     public void createPage() throws IOException {
         Stage stage = new Stage();
         Parent root = (Parent) FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("SalesPage.fxml")));
+        stage.getIcons().add(new Image("C:\\Users\\lenovo\\IdeaProjects\\vtys\\src\\main\\java\\com\\example\\vtys\\paw.png"));
+        stage.setTitle("FarmNN!");
         Scene scene = new Scene(root);
         stage.setScene(scene);
 
@@ -90,6 +93,8 @@ public class SalesPage implements Initializable {
 
         Stage stage = new Stage();
         Parent root = (Parent) FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("MainPage.fxml")));
+        stage.getIcons().add(new Image("C:\\Users\\lenovo\\IdeaProjects\\vtys\\src\\main\\java\\com\\example\\vtys\\paw.png"));
+        stage.setTitle("FarmNN!");
         Scene scene = new Scene(root);
         stage.setScene(scene);
 
@@ -113,8 +118,8 @@ public class SalesPage implements Initializable {
         col2.setCellValueFactory(new PropertyValueFactory<Farmer, String>("firstName"));
         col3.setCellValueFactory(new PropertyValueFactory<Farmer, String>("lastName"));
         col4.setCellValueFactory(new PropertyValueFactory<Farmer, String>("field"));
-        col5.setCellValueFactory(new PropertyValueFactory<Farmer, String>("tool"));
-        col6.setCellValueFactory(new PropertyValueFactory<Farmer, String>("vehicle"));
+        col5.setCellValueFactory(new PropertyValueFactory<Farmer, String>("vehicle"));
+        col6.setCellValueFactory(new PropertyValueFactory<Farmer, String>("tool"));
         //col7.setCellValueFactory(new PropertyValueFactory<Farmer, ObservableValue<Boolean>>("quantity"));
 
         try {
@@ -143,8 +148,11 @@ public class SalesPage implements Initializable {
 //                "left join Vehicle ON Farm.VehicleID=Vehicle.VehicleID\n" +
 //                "left join Field ON Farm.FieldID=Field.FieldID";
 
-        String query = "SELECT * FROM Farmer\n" +
-                "left join Farm ON Farmer.FarmerID=Farm.FarmerID";
+        String query = "SELECT Farmer.FarmerID, FarmerFirstName,FarmerLastName,ToolName, VehicleType,Farm.FieldID FROM Farm\n" +
+                "left join Farmer ON Farm.FarmerID=Farmer.FarmerID\n" +
+                "left join Tools ON Farm.ToolID=Tools.ToolID\n" +
+                "left join Vehicle ON Farm.VehicleID=Vehicle.VehicleID\n" +
+                "left join Field ON Farm.FieldID=Field.FieldID";
         rs = s.executeQuery(query);
 
         ObservableList<Farmer> farmers = FXCollections.observableArrayList();
@@ -161,7 +169,7 @@ public class SalesPage implements Initializable {
             //Boolean work = (rs.getBoolean(7));
 
 
-            farmers.add(new Farmer(id, fname, lname, tool,veh,field));
+            farmers.add(new Farmer(id, fname, lname, tool, veh,field));
         }
 
         return farmers;
@@ -190,12 +198,28 @@ public class SalesPage implements Initializable {
             String five = vehicleID.getText();
             String six = fieldID.getText();
 
-            String query = "INSERT INTO Farmer (FarmerID, FarmerFirstName, FarmerLastName)" +
-                    "VALUES (\'" + one + "\', \'" + two + "\', \'" + three + "\')";
-
-
+            String query = "UPDATE Farmer SET FarmerFirstName=\'"+two+"\'  WHERE FarmerID="+one;
             System.out.println(query);
             s.executeUpdate(query);
+
+             query = "UPDATE Farmer SET FarmerLastName=\'"+three+"\'  WHERE FarmerID="+one;
+            System.out.println(query);
+            s.executeUpdate(query);
+
+            query = "UPDATE Farm SET ToolID="+four+" WHERE FarmerID="+one;
+            System.out.println(query);
+            s.executeUpdate(query);
+
+            query = "UPDATE Farm SET VehicleID="+five+"  WHERE FarmerID="+one;
+            System.out.println(query);
+            s.executeUpdate(query);
+
+            query = "UPDATE Farm SET FieldID="+six+"  WHERE FarmerID="+one;
+            System.out.println(query);
+            s.executeUpdate(query);
+
+
+
 
             id.setText("");
             fname.setText("");
@@ -205,16 +229,12 @@ public class SalesPage implements Initializable {
             fieldID.setText("");
 
 
-            query = "INSERT INTO Farm (FarmerID, ToolID, VehicleID,FieldID)" +
-                    "VALUES (\'" + one + "\',  \'" + four + "\', \'" + five + "\',\'" + six + "\')";
 
-            System.out.println(query);
-            s.executeUpdate(query);
 
 
             refreshPage();
         } catch (Exception e) {
-            delLabel.setText("An error occured");
+            delLabel.setText("Incorrect Farmer ID");
             System.out.println(e.getStackTrace().toString());
 
         }
